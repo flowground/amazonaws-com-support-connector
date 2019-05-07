@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "attachmentSetId": {
+                    "description": "The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.",
+                    "type": "string"
+                },
+                "categoryCode": {
+                    "description": "The category of problem for the AWS Support case.",
+                    "type": "string"
+                },
+                "ccEmailAddresses": {
+                    "description": "A list of email addresses that AWS Support copies on case correspondence.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "maxItems": 10,
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "communicationBody": {
+                    "description": "The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.",
+                    "maxLength": 8000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "issueType": {
+                    "description": "The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"",
+                    "type": "string"
+                },
+                "language": {
+                    "description": "The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.",
+                    "type": "string"
+                },
+                "serviceCode": {
+                    "description": "The code for the AWS service returned by the call to <a>DescribeServices</a>.",
+                    "type": "string"
+                },
+                "severityCode": {
+                    "description": "<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p> </note>",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "The title of the AWS Support case.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "subject",
+                "communicationBody"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

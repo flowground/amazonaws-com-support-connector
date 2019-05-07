@@ -1,0 +1,90 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "required": false,
+            "type": "string"
+        },
+        "nextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "<p/>",
+            "properties": {
+                "afterTime": {
+                    "description": "The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.",
+                    "type": "string"
+                },
+                "beforeTime": {
+                    "description": "The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.",
+                    "type": "string"
+                },
+                "caseIdList": {
+                    "description": "A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "displayId": {
+                    "description": "The ID displayed for a case in the AWS Support Center user interface.",
+                    "type": "string"
+                },
+                "includeCommunications": {
+                    "description": "Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.",
+                    "type": "boolean"
+                },
+                "includeResolvedCases": {
+                    "description": "Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.",
+                    "type": "boolean"
+                },
+                "language": {
+                    "description": "The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.",
+                    "type": "string"
+                },
+                "maxResults": {
+                    "description": "The maximum number of results to return before paginating.",
+                    "maximum": 100,
+                    "minimum": 10,
+                    "type": "integer"
+                },
+                "nextToken": {
+                    "description": "A resumption point for pagination.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
